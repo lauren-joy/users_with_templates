@@ -1,0 +1,25 @@
+CREATE 3 NEW USERS
+	User.objects.create(first_name='sarah', last_name='doe', email='sarah@gmail.com', age=25)
+	User.objects.create(first_name='lauren', last_name='deer', email='lauren@gmail.com', age=26)
+	User.objects.create(first_name='will', last_name='aero', email='will@gmail.com', age=29)
+
+RETRIEVE ALL THE USERS
+	User.objects.all()
+
+RETRIEVE THE LAST USER
+	User.objects.last()
+
+RETRIEVE THE FIRST USER
+	User.objects.first()
+
+CHANGE USER WITH ID=3 SO THEIR LAST NAME IS PANCAKES
+	will=User.objects.get(id=3)
+	will.last_name = 'pancake'
+	will.save()
+
+DELETE THE USER WITH ID=2 FROM THE DATABASE
+	lauren= User.objects.get(id=2)
+	User.objects.get(id=2).delete()
+
+GET ALL THE USERS, SORTED BY THEIR FIRST NAME
+	User.objects.order_by('first_name')
